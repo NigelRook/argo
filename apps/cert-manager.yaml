@@ -10,14 +10,17 @@ spec:
     namespace: cert-manager
     server: https://kubernetes.default.svc
   project: default
-  source:
-    repoURL: quay.io/jetstack/charts
+  sources:
+  - repoURL: quay.io/jetstack/charts
     chart: cert-manager
     targetRevision: v1.19.1
     helm:
       parameters:
       - name: crds.enabled
         value: "true"
+  - repoURL: https://github.com/NigelRook/argo
+    path: cert-manager
+    targetRevision: main
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
