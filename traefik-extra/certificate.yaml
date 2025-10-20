@@ -1,13 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: wildcard-cert-stage
-  namespace: default
+  name: wildcard-rook-onl
 spec:
-  secretName: wildcard-cert-stage
+  secretName: wildcard-rook-onl
   commonName: "*.rook.onl"
   issuerRef:
     kind: ClusterIssuer
-    name: letsencrypt-stage
+    name: letsencrypt
   dnsNames:
   - "*.rook.onl"
